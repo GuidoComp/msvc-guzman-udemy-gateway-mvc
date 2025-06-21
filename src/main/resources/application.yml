@@ -24,7 +24,7 @@ spring:
     oauth2:
       resourceserver: ##declara que valida tokens JWT en oauth, es un resource server
         jwt:
-          issuer-uri: http://127.0.0.1:9100
+          issuer-uri: ${IP_ADDR:http://127.0.0.1:9100}
       client: ##declara un cliente de OAuth2, con qué credenciales se conecta al servidor de autorización
         registration:
           client-app:
@@ -39,7 +39,7 @@ spring:
             client-name: client-app
         provider:
           spring:
-            issuer-uri: http://127.0.0.1:9100
+            issuer-uri: ${IP_ADDR:http://127.0.0.1:9100}
   cloud:
     gateway:
      mvc:
